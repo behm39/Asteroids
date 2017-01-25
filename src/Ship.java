@@ -6,6 +6,17 @@ public class Ship implements GameObject {
     double heading;
     boolean thrusting;
     Rotation rotation;
+    Game game;
+
+    public Ship(Game game) {
+        this.game = game;
+        this.heading = 0;
+        this.rotation = Rotation.None;
+
+        this.pos = new Vector(game.getWidth() / 2, game.getHeight() / 2);
+        this.vel = new Vector();
+        this.acc = new Vector();
+    }
 
     @Override
     public void tick() {
